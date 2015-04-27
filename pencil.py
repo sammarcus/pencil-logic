@@ -204,7 +204,7 @@ def main():
     m = multiplier(max_commits(cal))
 
     print ('name of the repo to be used by pencil:')
-    repo = raw_input(">")
+    repo = "pencil"
 
     print ('Enter the number of weeks to offset the image (from the left):')
     offset = raw_input(">")
@@ -236,12 +236,12 @@ def main():
     print ('images: ' + ", ".join(images.keys()))
     image = raw_input(">")
     if not image:
-        image = IMAGES['kitty']
+        image = IMAGES['false']
     else:
         try:
             image = images[image]
         except:
-            image = IMAGES['kitty']
+            image = IMAGES['false']
     if not ghe:
         output = fake_it(image, get_start_date(), username, repo, offset,
                 m*match)
